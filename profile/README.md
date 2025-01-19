@@ -1,12 +1,24 @@
-## Hi there 👋
+## DV-Flow - Flow Automation for Silicon Design
 
-<!--
 
-**Here are some ideas to get you started:**
+```mermaid
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+    flowchart TD
+      A[IP Fileset] --> B[Testbench]
+      C[VIP Fileset] --> D[Precompile]
+      D --> B
+      B --> E[SimImage]
+      E --> F[Test1]
+      E --> G[Test2]
+      E --> H[Test3]
+```
+
+DV Flow is a set of tools focused on automating design and verification
+activities for silicon design. Three categories of material are provided:
+
+- **Specification** - Flows are specified using a YAML schema. Flows consist 
+  of tasks related by dataflow.
+- **Libraries** - Libraries provide pre-defined tasks that implement common
+  operations, such as building a simulator image.
+- **Technology** - Tools for developing and executing flow specifications
+
